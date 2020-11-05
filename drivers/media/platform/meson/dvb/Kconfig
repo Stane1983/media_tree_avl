@@ -1,0 +1,21 @@
+#
+# Meson dvb driver configuration
+#
+
+menu "Meson dvb drivers"
+
+config MESON_DVB
+	tristate "Meson dvb drivers"
+	default n
+	select DVB_CORE
+	help
+		Select to enable Meson dvb drivers.
+
+config AVL6261
+	tristate "AVL6261 dvb driver"
+	default m
+	depends on MESON_DVB
+	help
+		Select to enable AVL6261 dvb driver.
+
+endmenu
